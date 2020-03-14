@@ -1,0 +1,10 @@
+/*
+You do not need to worry about .error {} colliding with any other `.scss` or
+`.module.scss` files!
+*/
+.error {
+  color: white;
+  background-color: red;
+  border-radius: 10px;
+  padding: 10px;
+}
