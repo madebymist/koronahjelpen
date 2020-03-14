@@ -1,16 +1,28 @@
-import styles from './index.module.scss'
+import styles from "./index.module.scss";
+import PropTypes from "prop-types";
+import { cn } from "../../lib/helpers";
 
-const Button = () => {
+const Button = ({ type, children, className, onClick }) => {
   return (
     <button
-      type="button"
-      // Note how the "error" class is accessed as a property on the imported
-      // `styles` object.
-      className={styles.error}
+      type={type}
+      className={cn(styles.wrapper, className)}
+      onClick={onClick}
     >
-      Help
+      {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+Button.defaultProps = {
+  type: "button"
+};
+
+Button.propTypes = {
+  children: PropTypes.any.isRequired,
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
+  className: PropTypes.string,
+  onClick: PropTypes.func
+};
+
+export default Button;
