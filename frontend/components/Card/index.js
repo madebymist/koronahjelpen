@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { cn } from "../../lib/helpers";
 import styles from "./index.module.scss";
 
-const Card = ({ children, className }) => {
-  return <div className={cn(styles.card, className)}>{children}</div>;
+const Card = ({ children }) => {
+  return <div className={styles.card}>{children}</div>;
 };
 
 Card.propTypes = {

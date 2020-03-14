@@ -2,13 +2,9 @@ import styles from "./index.module.scss";
 import PropTypes from "prop-types";
 import { cn } from "../../lib/helpers";
 
-const Button = ({ type, children, className, onClick }) => {
+const Button = ({ type, children, onClick }) => {
   return (
-    <button
-      type={type}
-      className={cn(styles.wrapper, className)}
-      onClick={onClick}
-    >
+    <button type={type} className={styles.button} onClick={onClick}>
       {children}
     </button>
   );
